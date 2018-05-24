@@ -26,6 +26,12 @@
             android:layout_height="wrap_content"
             android:text="float"/>
 
+        <Button
+            android:id="@+id/bt_pic_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pic_list"/>
+
     </LinearLayout>
 
 </RelativeLayout>

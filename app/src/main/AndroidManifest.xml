@@ -21,6 +21,14 @@
 
         <activity android:name=".activity.FloatViewActivity"/>
 
+        <activity android:name=".activity.PictureListActivity"/>
+
+        <activity android:name=".myview.album.OpereatePictureActivity"/>
+
     </application>
+
+    <!--读写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>
