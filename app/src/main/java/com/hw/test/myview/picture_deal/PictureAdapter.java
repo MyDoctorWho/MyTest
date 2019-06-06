@@ -1,4 +1,4 @@
-package com.hw.test.myview.album;
+package com.hw.test.myview.picture_deal;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.hw.test.R;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -71,13 +72,17 @@ public class PictureAdapter extends BaseAdapter {
         if(!scroll){
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
-            Bitmap bitmap = BitmapFactory.decodeFile(list.get(position).getPath(),options);
 
             int outHeight = options.outHeight;
             int outWidth = options.outWidth;
             options.inJustDecodeBounds = false;
             options.inSampleSize = 10;
-            bitmap = BitmapFactory.decodeFile(list.get(position).getPath(),options);
+            Bitmap bitmap = bitmap = BitmapFactory.decodeFile(list.get(position).getPath(),options);
+
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG,80,outputStream);
+            Bitmap compressedBm = BitmapFactory.decodeByteArray(outputStream.toByteArray(), 0, outputStream.toByteArray().length);
+
             viewHolder.imageView.setImageBitmap(bitmap);
         }else{
             viewHolder.imageView.setImageResource(R.drawable.default_bg);

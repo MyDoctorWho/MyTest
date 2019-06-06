@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.hw.test.activity.CenterWinAndFlowerActivity;
 import com.hw.test.activity.FloatViewActivity;
+import com.hw.test.activity.PathDemoActivity;
 import com.hw.test.activity.PictureListActivity;
 
 /**
@@ -22,6 +23,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     private Button bt_pic_list;
 
+    private Button bt_path_demo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +38,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
         bt_vectory_show = (Button) findViewById(R.id.bt_vectory_show);
         bt_float = (Button) findViewById(R.id.bt_float);
         bt_pic_list = (Button) findViewById(R.id.bt_pic_list);
+        bt_path_demo = (Button) findViewById(R.id.bt_path_demo);
 
         bt_vectory_show.setOnClickListener(this);
         bt_float.setOnClickListener(this);
         bt_pic_list.setOnClickListener(this);
+        bt_path_demo.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +58,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.bt_pic_list:
                 startActivity(new Intent(MainActivity.this,PictureListActivity.class));
                 break;
+            case R.id.bt_path_demo:
+                startActivity(new Intent(MainActivity.this, PathDemoActivity.class));
             default:
                 break;
         }

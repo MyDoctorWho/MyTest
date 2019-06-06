@@ -11,9 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.hw.test.R;
-import com.hw.test.myview.album.OpereatePictureActivity;
-import com.hw.test.myview.album.PictureAdapter;
-import com.hw.test.myview.album.PictureEntity;
+import com.hw.test.myview.picture_deal.PictureAdapter;
+import com.hw.test.myview.picture_deal.PictureEntity;
 import java.util.ArrayList;
 
 /**
@@ -72,7 +71,9 @@ public class PictureListActivity extends Activity {
         picture_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(PictureListActivity.this,OpereatePictureActivity.class));
+                Intent intent = new Intent(PictureListActivity.this,OperatePicActivity.class);
+                intent.putExtra("pic_path",arrayList.get(position).getPath());
+                startActivity(intent);
             }
         });
     }

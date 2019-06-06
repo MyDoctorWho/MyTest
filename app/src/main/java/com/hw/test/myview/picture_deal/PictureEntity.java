@@ -1,4 +1,4 @@
-package com.hw.test.myview.album;
+package com.hw.test.myview.picture_deal;
 
 import java.io.Serializable;
 
